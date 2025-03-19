@@ -14,7 +14,7 @@ function App() {
     setProduct(null);
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/products/${barcode}`);
+const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/${barcode}`);
       setProduct(response.data);
     } catch (err) {
       setError('Product not found. Please try another barcode.');
